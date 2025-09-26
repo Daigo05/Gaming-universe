@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Universe</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&family=Press+Start+2P&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->   
+  <nav id="navbar">
+    <div class="logo">Gaming Universe</div>
+    <ul>
+      <li><a href="#home" class="nav-link active">Home</a></li>
+      <li><a href="#games" class="nav-link">Games</a></li>
+      <li><a href="#about" class="nav-link">About</a></li>
+      <li><a href="#contact" class="nav-link">Contact</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO SECTION -->
+  <header class="hero" id="home">
+    <h1>Welcome to the Home of Gamers</h1>
+    <p>Discover Epic FPS Shooter Games, Intense , Competitive and Timeless Classics.</p>
+    <button id="exploreBtn" type="button">Explore Games</button>
+  </header>
+
+  <!-- GAMES SECTION -->
+  <section id="games" class="section container">
+    <h2 class="section-title">Top FPS Games</h2>
+    <div class="card-grid">
+      <!-- Valorant -->
+      <article class="card">
+        <img src="../assets/images/valorant.png" data-local="../assets/images/valorant.png" data-fallback="https://images.unsplash.com/photo-1585079542156-2755d9c8aff1?q=80&w=1600&auto=format&fit=crop" alt="Valorant Cover" />
+        <div class="card-body">
+          <h3>Valorant</h3>
+          <p>5v5 tactical hero shooter by Riot Games featuring precise gunplay and unique agent abilities.</p>
+          <a href="https://playvalorant.com/" target="_blank" rel="noopener" class="btn">Download</a>
+        </div>
+      </article>
+      <!-- Call of Duty: Warzone -->
+      <article class="card">
+        <img src="../assets/images/warzone.png" data-local="../assets/images/warzone.png" data-fallback="https://images.unsplash.com/photo-1542751110-97427bbecf20?q=80&w=1600&auto=format&fit=crop" alt="Call of Duty Warzone" />
+        <div class="card-body">
+          <h3>Call of Duty: Warzone</h3>
+          <p>Free-to-play battle royale with fast action across large-scale maps and modes.</p>
+          <a href="https://www.callofduty.com/warzone" target="_blank" rel="noopener" class="btn">Download</a>
+        </div>
+      </article>
+      <!-- Farlight 84 -->
+      <article class="card">
+        <img src="../assets/images/fl84.png" data-local="../assets/images/fl84.png" data-fallback="https://images.unsplash.com/photo-1538481199705-c710c4e965fc?q=80&w=1600&auto=format&fit=crop" alt="Farlight 84" />
+        <div class="card-body">
+          <h3>Farlight 84</h3>
+          <p>Hero-based shooter with jetpacks, vehicles, and frantic sci‑fi combat.</p>
+          <a href="https://www.farlight84.com/" target="_blank" rel="noopener" class="btn">Download</a>
+        </div>
+      </article>
+      <!-- Apex Legends -->
+      <article class="card">
+        <img src="../assets/images/apex.png" data-local="../assets/images/apex.png" data-fallback="https://images.unsplash.com/photo-1535223289827-42f1e9919769?q=80&w=1600&auto=format&fit=crop" alt="Apex Legends" />
+        <div class="card-body">
+          <h3>Apex Legends</h3>
+          <p>Squad-based battle royale with unique Legends and fluid movement.</p>
+          <a href="https://www.ea.com/games/apex-legends" target="_blank" rel="noopener" class="btn">Download</a>
+        </div>
+      </article>
+      <!-- PUBG: Battlegrounds -->
+      <article class="card">
+        <img src="../assets/images/pub2.png" data-local="../assets/images/pub2.png" data-fallback="https://images.unsplash.com/photo-1605901309584-818e25960a8b?q=80&w=1600&auto=format&fit=crop" alt="PUBG Battlegrounds" />
+        <div class="card-body">
+          <h3>PUBG: Battlegrounds</h3>
+          <p>Classic last-man-standing battle royale with realistic ballistics.</p>
+          <a href="https://pubg.com/" target="_blank" rel="noopener" class="btn">Download</a>
+        </div>
+      </article>
+      <!-- Counter-Strike 2 -->
+      <article class="card">
+        <img src="../assets/images/csgo.png" data-local="../assets/images/csgo.png" data-fallback="https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1600&auto=format&fit=crop" alt="Counter-Strike 2" />
+        <div class="card-body">
+          <h3>Counter‑Strike 2</h3>
+          <p>Iconic competitive FPS focused on skillful gunplay and strategy.</p>
+          <a href="https://www.counter-strike.net/cs2" target="_blank" rel="noopener" class="btn">Download</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ABOUT SECTION -->
+  <section id="about" class="section container">
+    <h2 class="section-title">About</h2>
+    <p class="lead">We are passionate gamers curating the best experiences from across the industry. From indie gems to AAA blockbusters, we bring you news, reviews, and guides to level up your play.</p>
+  </section>
+
+  <!-- CONTACT SECTION -->
+  <section id="contact" class="section container">
+    <h2 class="section-title">Contact</h2>
+    <form class="contact-form" onsubmit="return false;">
+      <div class="form-row">
+        <input type="text" placeholder="Your Name" required />
+        <input type="email" placeholder="Your Email" required />
+      </div>
+      <textarea rows="5" placeholder="Your Message" required></textarea>
+      <button class="btn" type="submit">Send Message</button>
+    </form>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <p>© <span id="year"></span> Gaming Universe. All rights reserved.</p>
+  </footer>
+
+  <script src="../js/main.js" defer></script>
+</body>
+</html>

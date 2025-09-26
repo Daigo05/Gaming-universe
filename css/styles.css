@@ -1,0 +1,296 @@
+/* RESET */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #0f0f0f;
+  color: #fff;
+  transition: background 0.5s, color 0.5s;
+  overflow-x: hidden;
+}
+
+img { max-width: 100%; display: block; }
+
+.container {
+  width: min(1100px, 92%);
+  margin-inline: auto;
+}
+
+/* Typography overrides for headings and paragraphs */
+h1, h2, p {
+  font-family: "Kumbh Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-style: normal;
+  font-variation-settings: "YOPQ" 300;
+}
+h1 { font-weight: 800; }
+h2 { font-weight: 700; }
+p  { font-weight: 400; }
+
+/* Utility: Press Start 2P font */
+.press-start-2p-regular {
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+  background: rgba(0, 0, 0, 0.6) url("../assets/images/NAVBRRR.PNG") center/cover no-repeat;
+  background-blend-mode: multiply;
+  z-index: 100;
+  backdrop-filter: blur(10px);
+  transition: background 0.5s, padding 0.3s;
+}
+
+nav.scrolled { background: rgba(0, 0, 0, 0.8) url("../assets/images/NAVBRRR.PNG") center/cover no-repeat; background-blend-mode: multiply; padding: 10px 50px; }
+
+.logo {
+  font-size: 26px;
+  font-weight: 700;
+  color: #04fafa;
+  letter-spacing: 2px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover { transform: scale(1.1); }
+
+nav ul {
+  display: flex;
+  list-style: none;
+  gap: 30px;
+}
+
+nav ul li a {
+  color: #07efef;
+  text-decoration: none;
+  font-weight: 500;
+  transition: 0.3s;
+  position: relative;
+}
+
+nav ul li a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #f10303;
+  transition: width 0.3s ease;
+}
+
+nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  background: url("../assets/images/BG.PNG") no-repeat center/cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
+  color: #0ddede;
+  padding: 0 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero h1 {
+  font-size: clamp(36px, 6vw, 64px);
+  z-index: 2;
+  font-family: "Press Start 2P", system-ui;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-shadow: 0 2px 0 rgba(10, 33, 239, 0.5), 0 0 12px rgba(30, 6, 246, 0.35);
+  opacity: 0;
+  animation: fadeInDown 0.9s ease forwards;
+}
+
+.hero p {
+  font-size: clamp(16px, 2.5vw, 22px);
+  margin-top: 15px;
+  color: #fff;
+  z-index: 2;
+  opacity: 0;
+  animation: fadeIn 1s ease forwards 0.6s;
+}
+
+.hero button {
+  margin-top: 30px;
+  z-index: 2;
+  background: #0ddede;
+  border: none;
+  color: #141414;
+  padding: 14px 35px;
+  font-size: 18px;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background 0.3s ease, box-shadow 0.3s ease;
+  opacity: 0;
+  animation: fadeInUp 1.1s ease forwards 1s;
+}
+
+.hero button:hover { transform: translateY(-2px) scale(1.05); background: #3ff113fe; box-shadow: 0 0 15px rgba(85, 225, 16, 0.863); }
+.hero button:active { transform: scale(0.97); }
+
+/* SECTIONS */
+.section { padding: 80px 0; }
+.section-title { font-size: 32px; margin-bottom: 24px; position: relative; }
+.section-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background: #f00606;
+  margin-top: 10px;
+}
+.lead { color: #cfcfcf; line-height: 1.8; }
+
+/* CARDS */
+/* Blurred collage background for Top FPS Games section */
+#games {
+    position: relative;
+    width: 98vw;       /* full screen width */
+    min-height: 100vh;  /* full screen height */
+    overflow: hidden;
+  }
+  
+  #games::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-image:
+      linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)),
+      url("../assets/images/valorant.png"),
+      url("../assets/images/csgo.png"),
+      url("../assets/images/apex.png");
+    background-repeat: no-repeat;
+    background-size: cover, cover, cover, cover; /* ✅ makes each fill the area */
+    background-position: center, left center, center center, right center;
+    filter: blur(3px);
+    transform: scale(1.1); /* ensures blur doesn’t leave black edges */
+    opacity: 0.5;
+  }
+  
+  /* Keeps your cards/text visible */
+  #games > * {
+    position: relative;
+    z-index: 1;
+  }
+  
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.card {
+  background: #151515;
+  border: 1px solid rgba(13, 221, 200, 0.834);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgba(3, 3, 250, 0.3);
+  transform: translateY(0);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.card:hover { transform: translateY(-6px); box-shadow: 0 18px 28px rgba(0,0,0,0.45); }
+
+.card img { aspect-ratio: 16/9; object-fit: cover; }
+
+.card-body { padding: 16px 16px 20px; }
+.card-body h3 { margin-bottom: 8px; }
+.card-body p { color: #bdbdbd; margin-bottom: 14px; line-height: 1.6; }
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    display: block;
+  }
+  
+  
+.btn {
+  display: inline-block;
+  background: #0ddede;
+  color: #141414;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 24px;
+  transition: transform 0.2s ease, background 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover { transform: translateY(-1px); background: #47d210; box-shadow: 0 0 10px rgba(33, 208, 14, 0.6); }
+
+/* FORM */
+.contact-form { display: grid; gap: 14px; }
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+.contact-form input, .contact-form textarea {
+  background: #111;
+  border: 1px solid rgba(255,255,255,0.08);
+  color: #fff;
+  padding: 12px 14px;
+  border-radius: 10px;
+  outline: none;
+}
+.contact-form input:focus, .contact-form textarea:focus { border-color: #ff4655; box-shadow: 0 0 0 3px rgba(255,70,85,0.15); }
+
+/* FOOTER */
+.footer { text-align: center; padding: 40px 20px; color: #b5b5b5; border-top: 1px solid rgba(255,255,255,0.08); background: #0d0d0d; }
+
+/* ANIMATIONS */
+@keyframes fadeInDown {
+  from { opacity: 0; transform: translateY(-18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  nav { padding: 12px 24px; }
+}
+
+@media (max-width: 640px) {
+  .card-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  nav ul { gap: 18px; }
+}
