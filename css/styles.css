@@ -8,6 +8,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px; /* offset for fixed navbar when using anchor links */
 }
 
 body {
@@ -286,11 +287,25 @@ nav ul li a:hover::after, nav ul li a.active::after { width: 100%; }
 /* RESPONSIVE */
 @media (max-width: 900px) {
   .card-grid { grid-template-columns: repeat(2, 1fr); }
-  nav { padding: 12px 24px; }
+  nav { padding: 12px 20px; }
+  .logo { font-size: 22px; }
+  nav ul { gap: 16px; }
+  nav ul li a { font-size: 14px; padding: 8px 0; }
+  .section { padding: 64px 0; }
+  .hero button { padding: 12px 24px; font-size: 16px; }
 }
 
 @media (max-width: 640px) {
   .card-grid { grid-template-columns: 1fr; }
   .form-row { grid-template-columns: 1fr; }
-  nav ul { gap: 18px; }
+  nav { padding: 10px 12px; flex-wrap: wrap; row-gap: 8px; }
+  .logo { font-size: 20px; flex: 1 1 100%; text-align: center; }
+  nav ul { gap: 12px; flex-wrap: wrap; justify-content: center; width: 100%; padding: 4px 0; }
+  nav ul li a { font-size: 13px; padding: 6px 0; }
+  .hero { padding: 0 14px; }
+  .hero h1 { font-size: clamp(22px, 8vw, 34px); }
+  .hero p { font-size: clamp(14px, 4vw, 18px); }
+  .hero button { padding: 10px 20px; font-size: 15px; }
+  .card img { height: 160px; }
+  .section { padding: 56px 0; }
 }
